@@ -1,0 +1,60 @@
+[
+      {
+        "_id": "1",
+        "picture": "https://i.ibb.co/mN9zpRb/spiderman-g33b4c8f3f-1920.jpg",
+        "name": "Spider Man",
+        "price": 19.99,
+        "rating": 4.5
+      },
+      {
+        "_id": "2",
+        "picture": "https://i.ibb.co/WcM2jfT/cat-g260ff42d6-1920.jpg",
+        "name": "Cat Woman",
+        "price": 29.99,
+        "rating": 4.2
+      },
+      {
+        "_id": "3",
+        "picture": "https://i.ibb.co/bJw55vp/captain-america-g09949c8b3-1920.jpg",
+        "name": "Captain America",
+        "price": 39.99,
+        "rating": 4.7
+      },
+      {
+        "_id": "4",
+        "picture": "https://i.ibb.co/0jTcnYf/groot-super-hero-ga97e1cf71-1920.jpg",
+        "name": "Mini Groot",
+        "price": 14.99,
+        "rating": 4.0
+      },
+      {
+        "_id": "5",
+        "picture": "https://i.ibb.co/6F0wyL9/batman-g7b01ed2b0-1920.jpg",
+        "name": "Batman",
+        "price": 49.99,
+        "rating": 4.9
+      },
+      {
+        "_id": "6",
+        "picture": "https://i.ibb.co/kcYxv76/superman-ga61c3ee44-1920.jpg",
+        "name": "Superman",
+        "price": 24.99,
+        "rating": 4.3
+      },
+      {
+        "_id": "7",
+        "picture": "https://i.ibb.co/TH6LgFy/small-ge8a2e6a7c-1920.jpg",
+        "name": "Transformer figurine",
+        "price": 9.99,
+        "rating": 4.1
+      },
+      {
+        "_id": "8",
+        "picture": "https://i.ibb.co/8rjJNZp/toys-g17c3014e1-1920.jpg",
+        "name": "Transformer miniature",
+        "price": 59.99,
+        "rating": 4.8
+      }
+    ]
+  
+  
