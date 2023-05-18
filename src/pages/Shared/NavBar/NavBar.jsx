@@ -23,7 +23,7 @@ const NavBar = () => {
     </div>
     
         <img className="w-28 h-20 vh-0 0 24 24" src="https://i.ibb.co/ZmD9XNX/pngtree-toy-shop-line-icon-vector-png-image-4675883.png" alt="" />
-        <p className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold">ToyWarriors</p>
+        <p className="text-l sm:text-3xl md:text-4xl lg:text-4xl font-bold">ToyWarriors</p>
     
     
   </div>
