@@ -5,7 +5,8 @@ const Footer = () => {
             <footer className="footer p-10 bg-base-200 text-base-content">
   <div>
     <img className="w-28 h-20 vh-0 0 24 24" src="https://i.ibb.co/ZmD9XNX/pngtree-toy-shop-line-icon-vector-png-image-4675883.png" alt="" />
-    <p>ACME Industries Ltd.<br/>Providing reliable tech since 1992</p>
+    <p className="font-bold text-3xl">ToyWarriors</p>
+    <p>Providing reliable toys since 1992</p>
   </div> 
   <div>
     <span className="footer-title">Services</span> 
@@ -22,10 +23,11 @@ const Footer = () => {
     <a className="link link-hover">Press kit</a>
   </div> 
   <div>
-    <span className="footer-title">Legal</span> 
-    <a className="link link-hover">Terms of use</a> 
-    <a className="link link-hover">Privacy policy</a> 
-    <a className="link link-hover">Cookie policy</a>
+    <span className="footer-title">Store Information.</span> 
+    <p>2005 Your Address Goes Here.</p> 
+    <p>896, Address 10010, HGJ</p> 
+    <p>Phone/Fax: 0123456789</p>
+    <p>Email: demo@example.com</p>
   </div>
 </footer>
 
