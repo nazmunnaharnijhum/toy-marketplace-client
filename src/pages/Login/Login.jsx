@@ -1,7 +1,7 @@
 import { FaGoogle } from "react-icons/fa";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.config";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 
@@ -10,6 +10,9 @@ const Login = () => {
     // const [user, setUser] = useState(null);
   const {signIn} = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+  console.log('login location', location)
+  const from = location.state?.from?.pathname || '/'
   const handleLogin = event => {
     event.preventDefault();
     const form = event.target;
@@ -21,7 +24,7 @@ const Login = () => {
     .then(result => {
         const loggedUser = result.user;
         console.log(loggedUser);
-        navigate('/')
+        navigate(from, { replace: true})
             setError('');
             form.reset();
     })
@@ -39,7 +42,7 @@ const Login = () => {
     .then(result => {
       const loggedUser = result.user;
       console.log(loggedUser);
-      navigate('/')
+      navigate(from, { replace: true})
     })
     .catch(error =>{
       console.log('error', error.message);
