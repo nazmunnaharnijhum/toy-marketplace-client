@@ -33,7 +33,7 @@ const ToysCard = ({toy}) => {
         </td>
         <td className="text-xl font-bold">{rating}</td>
         <th>
-        <button className="btn btn-outline btn-accent">Button</button>
+        <button className="btn btn-outline btn-accent">View Toys Details</button>
         </th>
       </tr>
     </tbody>

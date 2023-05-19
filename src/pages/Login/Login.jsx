@@ -1,6 +1,22 @@
-
+import { FaGoogle } from "react-icons/fa";
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import app from "../../firebase/firebase.config";
 
 const Login = () => {
+
+  const auth = getAuth(app);
+  const googleProvider = new GoogleAuthProvider();
+
+  const handleGoogleSignIn = () => {
+    signInWithPopup(auth, googleProvider)
+    .then(result => {
+      const loggedUser = result.user;
+      console.log(loggedUser);
+    })
+    .catch(error =>{
+      console.log('error', error.message);
+    })
+  }
 
   const handleLogin = event => {
     event.preventDefault();
@@ -39,7 +55,9 @@ const Login = () => {
           
           <input className="btn btn-primary" type="submit" value="Login" />
         </div>
+        <button></button>
         </form>
+        <button onClick={handleGoogleSignIn} className="btn btn-outline btn-accent"><FaGoogle/> Google Sign-in</button>
       </div>
     </div>
   </div>
