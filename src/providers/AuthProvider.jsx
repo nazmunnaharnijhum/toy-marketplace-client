@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { createContext } from "react";
-import { getAuth } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import app from "../firebase/firebase.config";
 
 export const AuthContext = createContext(null);
@@ -10,10 +10,20 @@ export const AuthContext = createContext(null);
 const auth = getAuth(app);
 const user = null;
 
+const createUser = (email, password) => {
+    return createUserWithEmailAndPassword(auth, email, password);
+}
+
+const signIn = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password);
+}
+
 const AuthProvider = ({children}) => {
 
     const authInfo = {
-        user
+        user,
+        createUser,
+        signIn
     }
 
     return (

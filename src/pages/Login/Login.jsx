@@ -2,8 +2,32 @@ import { FaGoogle } from "react-icons/fa";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.config";
 import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
+  const [error, setError] = useState('');
+    
+  const {signIn} = useContext(AuthContext);
+  const handleLogin = event => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+
+    signIn(email, password)
+    .then(result => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+            setError('');
+            form.reset();
+    })
+    .catch(error => {
+      console.log('error', error.message)
+      setError(error.message);
+    })
+  }
 
   const auth = getAuth(app);
   const googleProvider = new GoogleAuthProvider();
@@ -19,9 +43,7 @@ const Login = () => {
     })
   }
 
-  const handleLogin = event => {
-    event.preventDefault();
-  }
+ 
 
     return (
         <div className="hero min-h-screen bg-base-200">
@@ -49,6 +71,7 @@ const Login = () => {
           <input type="password" name="password" placeholder="password" required className="input input-bordered" />
           
         </div>
+        <p className="text-error">{error}</p>
         <div className="form-control mt-6">
           
           <input className="btn btn-accent" type="submit" value="Login" />
