@@ -1,14 +1,15 @@
 import { FaGoogle } from "react-icons/fa";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.config";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
   const [error, setError] = useState('');
-    
+    // const [user, setUser] = useState(null);
   const {signIn} = useContext(AuthContext);
+  const navigate = useNavigate();
   const handleLogin = event => {
     event.preventDefault();
     const form = event.target;
@@ -20,6 +21,7 @@ const Login = () => {
     .then(result => {
         const loggedUser = result.user;
         console.log(loggedUser);
+        navigate('/')
             setError('');
             form.reset();
     })
@@ -37,6 +39,7 @@ const Login = () => {
     .then(result => {
       const loggedUser = result.user;
       console.log(loggedUser);
+      navigate('/')
     })
     .catch(error =>{
       console.log('error', error.message);

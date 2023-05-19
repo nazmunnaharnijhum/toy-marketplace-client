@@ -4,14 +4,32 @@ import { AuthContext } from "../../../providers/AuthProvider";
 
 
 const NavBar = () => {
-  const {user} = useContext(AuthContext);
+  const {user,logOut} = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+    .then()
+    .catch(error => console.log(error));
+}
+  
     const navItems = <>
     <li><Link to="/">Home</Link></li>
         <li><Link to="allToys">All Toys</Link></li>
         <li><Link>My Toys</Link></li>
         <li><Link>Add A Toy</Link></li>
         <li><Link>Blogs</Link></li>
-        <li><Link to="login">Login</Link></li>
+        <>{ user ?
+            <>
+                <li>
+           <button onClick={handleLogOut}>Logout</button>
+           </li>
+          <li className="tooltip" data-tip={user.displayName}>
+          <img style={{width:'60px'}} src={user.photoURL} />
+          </li>
+            </>: 
+           <li><Link to="/login">
+           <button>Login</button>
+           </Link></li>
+           }</>
     </>
     return (
         <div className="navbar bg-base-100 h-28 mb-4">
@@ -37,7 +55,7 @@ const NavBar = () => {
   </div>
   <div className="navbar-end">
   <div>
-            { user ?
+            {/* { user ?
             <div className="flex">
                 <Link>
            <button>Logout</button>
@@ -46,7 +64,7 @@ const NavBar = () => {
            <Link to="/login">
            <button>Login</button>
            </Link>
-           }
+           } */}
            </div>
   </div>
 </div>

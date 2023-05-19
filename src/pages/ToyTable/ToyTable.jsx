@@ -6,7 +6,7 @@ const ToyTable = () => {
     const [toys, setToys] = useState([]);
 
     useEffect(() => {
-        fetch('toys.json')
+        fetch('http://localhost:5000/toys')
         .then(res => res.json())
         .then(data => setToys(data));
     },[])
@@ -27,9 +27,11 @@ const ToyTable = () => {
         </th>
         
         
-        <th className="text-xl font-bold">Toy Name</th>
-        <th className="text-xl font-bold">Price</th>
-        <th className="text-xl font-bold">Rating</th>
+        <th className="font-bold">Toy Name</th>
+        <th className="font-bold">Price</th>
+        <th className="font-bold">Available <br /> Quantity</th>
+        <th className="font-bold">Seller Name</th>
+        <th className="font-bold">Sub-Category</th>
         <th></th>
       </tr>
     </thead>

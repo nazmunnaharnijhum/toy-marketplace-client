@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
 
+import { Link } from "react-router-dom";
+
 const ToysCard = ({toy}) => {
 
-    const {picture, name, price, rating} = toy;
+    const {_id, picture, name, price, quantity, sellerName, subCategory} = toy;
     return (       
 
 
@@ -26,14 +28,15 @@ const ToysCard = ({toy}) => {
             </div>
           </div>
         </td>
-        <td className="text-xl font-bold">
+        <td className=" font-bold">
           ${price}
-          <br/>
-          <span className="badge badge-ghost badge-sm">You can get upto 30% discount</span>
+          
         </td>
-        <td className="text-xl font-bold">{rating}</td>
+        <td className="font-bold">{quantity}</td>
+        <td className="font-bold">{sellerName}</td>
+        <td className="font-bold">{subCategory}</td>
         <th>
-        <button className="btn btn-outline btn-accent">View Toys Details</button>
+        <Link to={`/details/${_id}`}><button className="btn btn-outline btn-accent">View Toys Details</button></Link>
         </th>
       </tr>
     </tbody>
