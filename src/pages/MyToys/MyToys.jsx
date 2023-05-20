@@ -1,11 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import MyToysTable from "./MyToysTable";
+import Swal from "sweetalert2";
 
 
 const MyToys = () => {
-    const {user} = useContext(AuthContext);
+    const {user, control} = useContext(AuthContext);
     const [toys, setToys] = useState([]);
+    // const [control, setControl] = useState(false);
 
     useEffect(() =>{
         fetch(`http://localhost:5000/myToys/${user?.email}`)
@@ -13,7 +15,59 @@ const MyToys = () => {
         .then(data => {
             setToys(data);
         })
-    }, [user])
+    }, [user, control])
+
+    const handleDelete = _id => {
+        console.log(_id);
+        Swal.fire({
+         title: 'Are you sure?',
+         text: "You won't be able to revert this!",
+         icon: 'warning',
+         showCancelButton: true,
+         confirmButtonColor: '#3085d6',
+         cancelButtonColor: '#d33',
+         confirmButtonText: 'Yes, delete it!'
+       }).then((result) => {
+         if (result.isConfirmed) {
+         
+         
+         fetch(`http://localhost:5000/myToys/${_id}`, {
+             method: 'DELETE'
+         })
+         .then(res => res.json())
+         .then(data => {
+             console.log(data);
+             if(data.deletedCount > 0){
+                 Swal.fire(
+                     'Deleted!',
+                     'Your toy has been deleted.',
+                     'success'
+                   )
+                   const remaining = toys.filter(toy => toy._id !== _id);
+                   setToys(remaining);
+             }
+         })
+ 
+         }
+       })
+     }
+
+    //  const handleUpdate = (data) => {
+    //     console.log(data);
+    //     fetch(`http://localhost:5000/updateToys/${data?._id}`, {
+    //       method: "PUT",
+    //       headers: { "Content-Type": "application/json" },
+    //       body: JSON.stringify(data),
+    //     })
+    //       .then((res) => res.json())
+    //       .then((result) => {
+    //         if (result.modifiedCount > 0) {
+    //           setControl(!control);
+    //         }
+    //         console.log(result);
+    //       });
+    //   };
+    
 
     return (
         <div>
@@ -45,6 +99,8 @@ const MyToys = () => {
                     toys.map(toy => <MyToysTable
                     key={toy._id}
                     toy={toy}
+                    handleDelete={handleDelete}
+                    // handleUpdate={handleUpdate}
                     ></MyToysTable>)
                 }
             </table>

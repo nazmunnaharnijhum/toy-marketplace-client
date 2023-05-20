@@ -15,6 +15,23 @@ const AuthProvider = ({children}) => {
 
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [control, setControl] = useState(false);
+
+    const handleUpdate = (data) => {
+        console.log(data);
+        fetch(`http://localhost:5000/updateToys/${data?._id}`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        })
+          .then((res) => res.json())
+          .then((result) => {
+            if (result.modifiedCount > 0) {
+              setControl(!control);
+            }
+            console.log(result);
+          });
+      };
 
     const createUser = (email, password) => {
         setLoading(true);
@@ -45,6 +62,8 @@ const AuthProvider = ({children}) => {
     const authInfo = {
         user,
         loading,
+        control,
+        handleUpdate,
         createUser,
         signIn,
         logOut
