@@ -17,7 +17,7 @@ const ToyDetails = () => {
     <p>Rating: {rating}</p>
     <p>Available Quantity: {quantity}</p>
     <div className="card-actions justify-end">
-      <button className="btn btn-primary">Listen</button>
+      <button className="btn btn-accent">Buy now</button>
     </div>
   </div>
 </div>

@@ -1,6 +1,5 @@
 [
       {
-        "_id": "1",
         "picture": "https://i.ibb.co/mN9zpRb/spiderman-g33b4c8f3f-1920.jpg",
         "name": "Spider Man",
         "details": "Action figure with realistic costume and vibrant colors, standing 6 inches tall for dynamic play.",
@@ -12,7 +11,6 @@
         "rating": 4.5
       },
       {
-        "_id": "2",
         "picture": "https://i.ibb.co/WcM2jfT/cat-g260ff42d6-1920.jpg",
         "name": "Cat Woman",
         "details": "Multiple points of articulation for posing and interactive play, allowing iconic superhero poses.",
@@ -24,7 +22,6 @@
         "rating": 4.2
       },
       {
-        "_id": "3",
         "picture": "https://i.ibb.co/bJw55vp/captain-america-g09949c8b3-1920.jpg",
         "name": "Captain America",
         "details": "Removable accessories like interchangeable hands, weapons, or gadgets for versatile and imaginative play.",
@@ -36,7 +33,6 @@
         "rating": 4.7
       },
       {
-        "_id": "4",
         "picture": "https://i.ibb.co/0jTcnYf/groot-super-hero-ga97e1cf71-1920.jpg",
         "name": "Mini Groot",
         "details": "Some toys feature light-up or sound effects such as glowing eyes or power-up sounds.",
@@ -48,7 +44,6 @@
         "rating": 4.0
       },
       {
-        "_id": "5",
         "picture": "https://i.ibb.co/6F0wyL9/batman-g7b01ed2b0-1920.jpg",
         "name": "Batman",
         "details": "Vibrant packaging with graphics, including a brief backstory or character description, and sometimes a collector card",
@@ -60,7 +55,6 @@
         "rating": 4.9
       },
       {
-        "_id": "6",
         "picture": "https://i.ibb.co/kcYxv76/superman-ga61c3ee44-1920.jpg",
         "name": "Superman",
         "details": "Vibrant packaging with graphics, including a brief backstory or character description, and sometimes a collector card",
@@ -72,7 +66,6 @@
         "rating": 4.3
       },
       {
-        "_id": "7",
         "picture": "https://i.ibb.co/TH6LgFy/small-ge8a2e6a7c-1920.jpg",
         "name": "Transformer figurine",
         "details": "Vibrant packaging with graphics, including a brief backstory or character description, and sometimes a collector card",
@@ -84,7 +77,6 @@
         "rating": 4.1
       },
       {
-        "_id": "8",
         "picture": "https://i.ibb.co/8rjJNZp/toys-g17c3014e1-1920.jpg",
         "name": "Transformer miniature",
         "details": "Vibrant packaging with graphics, including a brief backstory or character description, and sometimes a collector card",
