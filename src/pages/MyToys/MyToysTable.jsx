@@ -1,8 +1,44 @@
+
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const MyToysTable = ({toy}) => {
-    const { picture, name, price, quantity, sellerName, subCategory} = toy;
+    const {_id, picture, name, price, quantity, sellerName, subCategory} = toy;
+
+    const handleDelete = _id => {
+       console.log(_id);
+       Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+        
+        
+        fetch(`http://localhost:5000/myToys/${_id}`, {
+            method: 'DELETE'
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if(data.deletedCount > 0){
+                Swal.fire(
+                    'Deleted!',
+                    'Your toy has been deleted.',
+                    'success'
+                  )
+            }
+        })
+
+        }
+      })
+    }
+
     return (
         <tbody>
       {/* row 1 */}
@@ -34,7 +70,7 @@ const MyToysTable = ({toy}) => {
         <Link><button className="btn btn-outline btn-accent">Update</button></Link>
         </th>
         <th>
-        <button className="btn btn-outline btn-accent">Delete</button>
+        <button onClick={() => handleDelete(_id)} className="btn btn-outline btn-accent">Delete</button>
         </th>
       </tr>
     </tbody>

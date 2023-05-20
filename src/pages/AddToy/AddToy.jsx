@@ -3,6 +3,7 @@ import { useContext } from "react";
 import './AddToy.css';
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const AddToy = () => {
@@ -17,6 +18,7 @@ const AddToy = () => {
     .then(res => res.json())
     .then(result => {
         console.log(result);
+        Swal.fire('Successfully added a toy')
     })
      console.log(data);
   };
