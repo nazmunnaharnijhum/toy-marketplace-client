@@ -13,10 +13,10 @@ const NavBar = () => {
   
     const navItems = <>
     <li><Link to="/">Home</Link></li>
+    <li><Link to="allToys">All Toys</Link></li>
         
         
-        
-        <li><Link>Blogs</Link></li>
+        <li><Link to="blog">Blogs</Link></li>
         <>{ user ?
             <>
             <li><Link to="myToys">My Toys</Link></li>
@@ -28,12 +28,9 @@ const NavBar = () => {
           <img style={{width:'60px'}} src={user.photoURL} />
           </li>
             </>: 
-            <>
-            <li><Link to="allToys">All Toys</Link></li>
            <li><Link to="/login">
            <button>Login</button>
            </Link></li>
-           </>
            }</>
     </>
     return (
