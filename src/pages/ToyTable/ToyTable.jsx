@@ -11,6 +11,15 @@ const ToyTable = () => {
         .then(res => res.json())
         .then(data => setToys(data));
     },[])
+
+
+    const handleSearch = () => {
+        fetch(`http://localhost:5000/toySearchByTitle/${searchText}`)
+        .then(res => res.json())
+        .then(data => {
+            setToys(data);
+        });
+    }
     return (
         <div>
             <div className="mt-12 mb-12 ">
@@ -22,7 +31,7 @@ const ToyTable = () => {
             type="text"
             className="p-2"
           />{" "}
-          <button className="btn btn-outline btn-accent" >Search</button>
+          <button onClick={handleSearch} className="btn btn-outline btn-accent" >Search</button>
             </div>
             <div className="overflow-x-auto w-full mt-12">
   <table className="table w-full">
@@ -46,6 +55,7 @@ const ToyTable = () => {
                     toys.map(toy => <ToysCard
                     key={toy._id}
                     toy={toy}
+                    setToys={setToys}
                     ></ToysCard>)
                 }
             </table>
