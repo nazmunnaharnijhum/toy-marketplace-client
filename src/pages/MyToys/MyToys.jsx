@@ -1,30 +1,28 @@
-import { useEffect, useState } from "react";
-import ToysCard from "../Home/Toys/ToysCard";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
+import MyToysTable from "./MyToysTable";
 
 
-const ToyTable = () => {
+const MyToys = () => {
+    const {user} = useContext(AuthContext);
     const [toys, setToys] = useState([]);
-    const [searchText, setSearchText] = useState("");
 
-    useEffect(() => {
-        fetch('http://localhost:5000/toys')
+    useEffect(() =>{
+        fetch(`http://localhost:5000/myToys/${user?.email}`)
         .then(res => res.json())
-        .then(data => setToys(data));
-    },[])
+        .then(data => {
+            setToys(data);
+        })
+    }, [user])
+
     return (
         <div>
             <div className="mt-12 mb-12 ">
             <div className="text-center">
-                <h3 className="text-4xl text-teal-500 font-bold">Our Toys</h3>
+                <h3 className="text-4xl text-teal-500 font-bold">My Toys</h3>
                 <p className="text-bold text-2xl text-gray-600 mb-4">You can select your own warriors</p>
-                <input
-            onChange={(e) => setSearchText(e.target.value)}
-            type="text"
-            className="p-2"
-          />{" "}
-          <button className="btn btn-outline btn-accent" >Search</button>
             </div>
-            <div className="overflow-x-auto w-full mt-12">
+            <div className="overflow-x-auto w-full">
   <table className="table w-full">
     {/* head */}
     <thead>
@@ -40,13 +38,14 @@ const ToyTable = () => {
         <th className="font-bold">Seller Name</th>
         <th className="font-bold">Sub-Category</th>
         <th></th>
+        <th></th>
       </tr>
     </thead>
                 {
-                    toys.map(toy => <ToysCard
+                    toys.map(toy => <MyToysTable
                     key={toy._id}
                     toy={toy}
-                    ></ToysCard>)
+                    ></MyToysTable>)
                 }
             </table>
 </div>
@@ -55,4 +54,4 @@ const ToyTable = () => {
     );
 };
 
-export default ToyTable;
+export default MyToys;
