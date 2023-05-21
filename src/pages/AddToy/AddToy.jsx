@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import './AddToy.css';
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../providers/AuthProvider";
@@ -22,6 +22,10 @@ const AddToy = () => {
     })
      console.log(data);
   };
+
+  useEffect(() => {
+    document.title = "ToyWarriors | Add a Toy";
+}, []);
     return (
         <div className="add-job-container">
       <div className="add-job row">

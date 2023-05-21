@@ -5,9 +5,13 @@ import Swal from "sweetalert2";
 
 
 const MyToys = () => {
-    const {user, control} = useContext(AuthContext);
+
+    useEffect(() => {
+        document.title = "ToyWarriors | My Toys";
+    }, []);
+    const {user} = useContext(AuthContext);
     const [toys, setToys] = useState([]);
-    // const [control, setControl] = useState(false);
+    const [control, setControl] = useState(false);
 
     useEffect(() =>{
         fetch(`http://localhost:5000/myToys/${user?.email}`)
@@ -15,6 +19,7 @@ const MyToys = () => {
         .then(data => {
             setToys(data);
         })
+        
     }, [user, control])
 
     const handleDelete = _id => {
@@ -52,21 +57,21 @@ const MyToys = () => {
        })
      }
 
-    //  const handleUpdate = (data) => {
-    //     console.log(data);
-    //     fetch(`http://localhost:5000/updateToys/${data?._id}`, {
-    //       method: "PUT",
-    //       headers: { "Content-Type": "application/json" },
-    //       body: JSON.stringify(data),
-    //     })
-    //       .then((res) => res.json())
-    //       .then((result) => {
-    //         if (result.modifiedCount > 0) {
-    //           setControl(!control);
-    //         }
-    //         console.log(result);
-    //       });
-    //   };
+     const handleUpdate = (data) => {
+        console.log(data);
+        fetch(`http://localhost:5000/updateToys/${data?._id}`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        })
+          .then((res) => res.json())
+          .then((result) => {
+            if (result.modifiedCount > 0) {
+              setControl(!control);
+            }
+            console.log(result);
+          });
+      };
     
 
     return (
@@ -100,7 +105,7 @@ const MyToys = () => {
                     key={toy._id}
                     toy={toy}
                     handleDelete={handleDelete}
-                    // handleUpdate={handleUpdate}
+                    handleUpdate={handleUpdate}
                     ></MyToysTable>)
                 }
             </table>

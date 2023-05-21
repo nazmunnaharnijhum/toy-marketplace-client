@@ -1,8 +1,14 @@
 /* eslint-disable react/prop-types */
 
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
+
 const ToysCard = ({toy}) => {
+
+  useEffect(() => {
+    document.title = "ToyWarriors | All Toys";
+}, []);
 
     const {_id, picture, name, price, quantity, sellerName, subCategory} = toy;
     return (       

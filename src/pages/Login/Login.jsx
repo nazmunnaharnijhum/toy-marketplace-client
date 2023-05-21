@@ -2,7 +2,7 @@ import { FaGoogle } from "react-icons/fa";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.config";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
@@ -49,6 +49,9 @@ const Login = () => {
     })
   }
 
+  useEffect(() => {
+    document.title = "ToyWarriors | Login";
+}, []);
  
 
     return (

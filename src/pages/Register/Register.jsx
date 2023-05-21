@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
@@ -6,6 +6,10 @@ import { updateProfile } from "firebase/auth";
 
 
 const Register = () => {
+
+  useEffect(() => {
+    document.title = "ToyWarriors | Register";
+}, []);
     const [error, setError] = useState('');
     const { createUser } = useContext(AuthContext);
 

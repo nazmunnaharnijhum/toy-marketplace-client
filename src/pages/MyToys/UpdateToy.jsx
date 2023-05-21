@@ -3,8 +3,8 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { useForm } from "react-hook-form";
 
-const UpdateToy = ({props}) => {
-    const {user, handleUpdate} = useContext(AuthContext);
+const UpdateToy = ({props, handleUpdate}) => {
+    const {user} = useContext(AuthContext);
 
     const {
         register,
@@ -12,7 +12,7 @@ const UpdateToy = ({props}) => {
         watch,
         formState: { errors },
       } = useForm();
-    //   const { handleUpdate } = props;
+      // const { handleUpdate } = props;
     return (
         <div className="add-job-container">
       <div className="add-job row">
@@ -96,6 +96,7 @@ const UpdateToy = ({props}) => {
               defaultValue={props?.toy?.details}
             />
             <input className="submit-btn" value="Update" type="submit" />
+            
           </form>
           </div>
            </div>

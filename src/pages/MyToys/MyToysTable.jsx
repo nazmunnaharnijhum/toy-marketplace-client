@@ -6,7 +6,7 @@
 import { Link } from "react-router-dom";
 
 
-const MyToysTable = ({toy, handleDelete}) => {
+const MyToysTable = ({toy, handleDelete, handleUpdate}) => {
 
    
 //   const [control, setControl] = useState(false);
@@ -47,7 +47,7 @@ const MyToysTable = ({toy, handleDelete}) => {
         <Link to={`/updateToy/${_id}`}
         key={toy._id}
         toy={toy}
-        // handleUpdate={handleUpdate}
+        handleUpdate={handleUpdate}
         >
         <button
                    className="btn btn-outline btn-accent"
