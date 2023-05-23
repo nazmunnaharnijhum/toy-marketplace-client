@@ -10,7 +10,7 @@ const AddToy = () => {
     const {user} = useContext(AuthContext);
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
   const onSubmit = (data) =>{
-    fetch('http://localhost:5000/postJob', {
+    fetch('https://toy-marketplace-assignment-11-server-nazmunnaharnijhum.vercel.app/postJob', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json'},
         body: JSON.stringify(data)

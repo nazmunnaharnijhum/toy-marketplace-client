@@ -2,11 +2,12 @@
 // import { useState } from "react";
 
 // import { AuthContext } from "../../providers/AuthProvider";
-// import UpdateToy from "./UpdateToy";
 import { Link } from "react-router-dom";
+// import UpdateToy from "./UpdateToy";
 
 
 const MyToysTable = ({toy, handleDelete, handleUpdate}) => {
+  // console.log(handleUpdate);
 
    
 //   const [control, setControl] = useState(false);
@@ -45,13 +46,10 @@ const MyToysTable = ({toy, handleDelete, handleUpdate}) => {
         <td className="font-bold">{subCategory}</td>
         <th>
         <Link to={`/updateToy/${_id}`}
-        key={toy._id}
-        toy={toy}
-        handleUpdate={handleUpdate}
+        
         >
-        <button
+        <button onClick={() => handleUpdate(_id)}
                    className="btn btn-outline btn-accent"
-                    
                     >Update</button>
         </Link>
         </th>

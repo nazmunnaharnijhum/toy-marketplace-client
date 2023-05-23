@@ -11,7 +11,7 @@ import Category from "../Category/Category";
 const Home = () => {
     useEffect(() => {
         Aos.init({duration: 3000});
-        document.title = "ToyWarriors | Home";
+        
     }, []);
 
     useEffect(() => {
@@ -21,10 +21,9 @@ const Home = () => {
     return (
         <div data-aos = "fade-right">
             <Banner></Banner>
+            <ExtraSection2></ExtraSection2>
             <Category></Category>
             <Toys></Toys>
-            
-            <ExtraSection2></ExtraSection2>
             <ExtraSection1></ExtraSection1>
             
         </div>

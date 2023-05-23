@@ -7,14 +7,14 @@ const ToyTable = () => {
     const [searchText, setSearchText] = useState("");
 
     useEffect(() => {
-        fetch('http://localhost:5000/toys')
+        fetch('https://toy-marketplace-assignment-11-server-nazmunnaharnijhum.vercel.app/toys')
         .then(res => res.json())
         .then(data => setToys(data));
     },[])
 
 
     const handleSearch = () => {
-        fetch(`http://localhost:5000/toySearchByTitle/${searchText}`)
+        fetch(`https://toy-marketplace-assignment-11-server-nazmunnaharnijhum.vercel.app/toySearchByTitle/${searchText}`)
         .then(res => res.json())
         .then(data => {
             setToys(data);

@@ -4,6 +4,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { useForm } from "react-hook-form";
 
 const UpdateToy = ({props, handleUpdate}) => {
+
     const {user} = useContext(AuthContext);
 
     const {
@@ -13,6 +14,7 @@ const UpdateToy = ({props, handleUpdate}) => {
         formState: { errors },
       } = useForm();
       // const { handleUpdate } = props;
+      
     return (
         <div className="add-job-container">
       <div className="add-job row">

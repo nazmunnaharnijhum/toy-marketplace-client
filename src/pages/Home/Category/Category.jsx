@@ -1,19 +1,23 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+
 import CategoryData from "./CategoryData";
 
 
 const Category = () => {
-    const [activeTab, setActiveTab] = useState("gvg");
+    const [activeTab, setActiveTab] = useState("avenger");
+    console.log(activeTab);
     const [toys, setToys] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/toys/${activeTab}`)
+        fetch(`https://toy-marketplace-assignment-11-server-nazmunnaharnijhum.vercel.app/toys/${activeTab}`)
         .then(res => res.json())
         .then(result => {
             setToys(result);
         });
     }, [activeTab]);
+
+   
 
     
 
@@ -33,9 +37,9 @@ const Category = () => {
         
         </div>
       <div className="tabs tabs-boxed">
-  <Link onClick={() => handleTabClick("avenger")} className="tab ">Avenger</Link> 
-  <Link onClick={() => handleTabClick("dc")} className="tab tab-active ">DC</Link> 
-  <Link onClick={() => handleTabClick("transformer")} className="tab ">Transformer</Link>
+  <button onClick={() => handleTabClick("avenger")} className={activeTab=="avenger"?" tab tab-active":"tab"}>Avenger</button> 
+  <button onClick={() => handleTabClick("dc")} className={activeTab=="dc"?" tab tab-active":"tab"}>DC</button> 
+  <button onClick={() => handleTabClick("transformer")} className={activeTab=="transformer"?" tab tab-active":"tab"}>Transformer</button>
 </div>
      
       </div>

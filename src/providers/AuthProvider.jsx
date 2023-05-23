@@ -15,11 +15,11 @@ const AuthProvider = ({children}) => {
 
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-    const [control, setControl] = useState(false);
+    // const [control, setControl] = useState(false);
 
     // const handleUpdate = (data) => {
     //     console.log(data);
-    //     fetch(`http://localhost:5000/updateToys/${data?._id}`, {
+    //     fetch(`https://toy-marketplace-assignment-11-server-nazmunnaharnijhum.vercel.app/updateToys/${data?._id}`, {
     //       method: "PUT",
     //       headers: { "Content-Type": "application/json" },
     //       body: JSON.stringify(data),
@@ -62,7 +62,7 @@ const AuthProvider = ({children}) => {
     const authInfo = {
         user,
         loading,
-        control,
+        // control,
         // handleUpdate,
         createUser,
         signIn,

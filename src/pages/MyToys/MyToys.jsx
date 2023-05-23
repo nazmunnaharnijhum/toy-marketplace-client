@@ -14,7 +14,7 @@ const MyToys = () => {
     const [control, setControl] = useState(false);
 
     useEffect(() =>{
-        fetch(`http://localhost:5000/myToys/${user?.email}`)
+        fetch(`https://toy-marketplace-assignment-11-server-nazmunnaharnijhum.vercel.app/myToys/${user?.email}`)
         .then(res => res.json())
         .then(data => {
             setToys(data);
@@ -36,7 +36,7 @@ const MyToys = () => {
          if (result.isConfirmed) {
          
          
-         fetch(`http://localhost:5000/myToys/${_id}`, {
+         fetch(`https://toy-marketplace-assignment-11-server-nazmunnaharnijhum.vercel.app/myToys/${_id}`, {
              method: 'DELETE'
          })
          .then(res => res.json())
@@ -57,9 +57,10 @@ const MyToys = () => {
        })
      }
 
+
      const handleUpdate = (data) => {
         console.log(data);
-        fetch(`http://localhost:5000/updateToys/${data?._id}`, {
+        fetch(`https://toy-marketplace-assignment-11-server-nazmunnaharnijhum.vercel.app/updateToys/${data?._id}`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(data),
