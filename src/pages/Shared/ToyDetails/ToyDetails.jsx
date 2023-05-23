@@ -1,4 +1,6 @@
 import { useLoaderData } from "react-router-dom";
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
 
 
 const ToyDetails = () => {
@@ -14,7 +16,8 @@ const ToyDetails = () => {
     <p>Seller Name: {sellerName}</p>
     <p>Seller Email: {sellerEmail}</p>
     <p>Price: ${price}</p>
-    <p>Rating: {rating}</p>
+    <p >Rating: <span> {rating}</span><Rating style={{ maxWidth: 100 }} value={rating} readOnly />
+    </p>
     <p>Available Quantity: {quantity}</p>
     <div className="card-actions justify-end">
       <button className="btn btn-accent">Buy now</button>
