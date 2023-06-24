@@ -46,12 +46,14 @@ const MyToysTable = ({toy, handleDelete, handleUpdate}) => {
         <td className="font-bold">{subCategory}</td>
         <th>
         <Link to={`/updateToy/${_id}`}
-        
+        key={toy._id}
+        toy={toy}
+        handleUpdate={handleUpdate}
         >
-        <button onClick={() => handleUpdate(_id)}
-                   className="btn btn-outline btn-accent"
+        <button  className="btn btn-outline btn-accent"
                     >Update</button>
         </Link>
+       
         </th>
         <th>
         <button onClick={() => handleDelete(_id)} className="btn btn-outline btn-accent">Delete</button>

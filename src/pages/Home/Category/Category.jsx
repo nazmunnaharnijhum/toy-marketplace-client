@@ -9,13 +9,21 @@ const Category = () => {
     console.log(activeTab);
     const [toys, setToys] = useState([]);
 
+    // useEffect(() => {
+    //     fetch(`https://toy-marketplace-assignment-11-server-nazmunnaharnijhum.vercel.app/toys/${activeTab}`, {mode: 'no-cors'})
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         console(data);
+    //     })
+    // }, [activeTab]);
+
     useEffect(() => {
-        fetch(`https://toy-marketplace-assignment-11-server-nazmunnaharnijhum.vercel.app/toys/${activeTab}`)
-        .then(res => res.json())
-        .then(result => {
-            setToys(result);
-        });
-    }, [activeTab]);
+		fetch(`https://toy-marketplace-assignment-11-server-nazmunnaharnijhum.vercel.app/toys/${activeTab}`)
+			.then((res) => res.json())
+			.then((result) => {
+				setToys(result);
+			});
+	}, [activeTab]);
 
    
 
