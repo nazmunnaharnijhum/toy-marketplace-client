@@ -92,7 +92,7 @@ const MyToys = () => {
         </th>
         
         
-        <th className="font-bold">Toy Name</th>
+        <th className="font-bold">Toys</th>
         <th className="font-bold">Price</th>
         <th className="font-bold">Available <br /> Quantity</th>
         <th className="font-bold">Seller Name</th>

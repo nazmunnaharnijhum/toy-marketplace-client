@@ -6,6 +6,8 @@ import Toys from "../Toys/Toys";
 import Aos from "aos";
 import 'aos/dist/aos.css';
 import Category from "../Category/Category";
+import InfoBox from "../InfoBox/InfoBox";
+import Offer from "../Offer/Offer";
 
 
 const Home = () => {
@@ -22,8 +24,10 @@ const Home = () => {
         <div data-aos = "fade-right">
             <Banner></Banner>
             <ExtraSection2></ExtraSection2>
-            <Category></Category>
+            <InfoBox></InfoBox>
+            {/* <Category></Category> */}
             <Toys></Toys>
+            <Offer></Offer>
             <ExtraSection1></ExtraSection1>
             
         </div>

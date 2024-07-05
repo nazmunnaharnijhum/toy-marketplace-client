@@ -9,7 +9,7 @@ const Toys = () => {
     }, []);
     return (
         <div>
-            <h2 className="text-4xl font-bold text-center text-teal-500 mt-12 mb-2">Ours Worries Gallery</h2>
+            <h2 className="text-4xl font-bold text-center text-teal-500 mt-16 mb-2">Ours Worries Gallery</h2>
             <p className="font-bold text-center text-gray-500  mb-4">ToyWarriors is an online toy store that offers a diverse range <br /> of toys for children of all ages. Our website provides a seamless shopping <br /> experience with detailed product descriptions, secure transactions, and prompt <br /> delivery services. Explore our extensive collection and <br /> let the adventures begin!</p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
 

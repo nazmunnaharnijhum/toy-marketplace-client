@@ -3,7 +3,7 @@ const Banner = () => {
     return (
         <div className="carousel w-full h-[700px]">
   <div id="slide1" className="carousel-item relative w-full">
-    <img src="https://i.ibb.co/YWXf2zj/toy-gf2b7f680f-1920.jpg" className="w-full rounded-xl" />
+    <img src="https://i.ibb.co/LY83YKB/dr-strange-gafbe2c0c2-1920.jpg" className="w-full rounded-xl" />
     <div className="absolute h-full flex items-center left-0 right-5 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] rounded-xl">
       <div className="text-yellow-50 space-y-5 pl-24 w-1/2">
         <h2 className="text-6xl font-bold text-yellow-50">Best Kids Store <br /> & Online Shop</h2>
@@ -47,7 +47,7 @@ const Banner = () => {
     </div>
   </div> 
   <div id="slide4" className="carousel-item relative w-full">
-    <img src="https://i.ibb.co/LY83YKB/dr-strange-gafbe2c0c2-1920.jpg" className="w-full rounded-xl" />
+    <img src="https://i.ibb.co/YWXf2zj/toy-gf2b7f680f-1920.jpg" className="w-full rounded-xl" />
     <div className="absolute h-full flex items-center left-0 right-5 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)] rounded-xl">
       <div className="text-yellow-50 space-y-5 pl-24 w-1/2">
         <h2 className="text-6xl font-bold text-yellow-50">Best Kids Store <br /> & Online Shop</h2>
