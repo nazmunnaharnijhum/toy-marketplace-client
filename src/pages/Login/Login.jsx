@@ -59,7 +59,7 @@ const Login = () => {
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="text-center lg:text-left w-1/2">
 
-        <img className="h-[600px] w-[700px]" src="https://i.ibb.co/9WyZsKz/open-door-g00cdafdfc-1280.png" alt="" />
+        <img className="ml-6 rounded-3xl" src="https://i.ibb.co/d2nq9Qy/login-nl-cover.jpg"   alt="" />
 
       
     </div>

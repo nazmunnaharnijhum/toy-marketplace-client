@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const Offer = () => {
     return (
@@ -24,7 +24,7 @@ const Offer = () => {
                 
                 <div className='ml-4'>
                     <h2 className='text-3xl text-white font-bold '>Children Day Collection 2024</h2>
-                    <div className='text-white font-bold my-3'>15% Off on Kids' Toys and Gifts!</div>
+                    <div className='text-white font-bold my-3'>15% Off on Kids Toys and Gifts!</div>
                     <button className="btn btn-wide rounded-3xl mt-2 bg-white text-slate-500">See Collection</button>
                 </div>
               

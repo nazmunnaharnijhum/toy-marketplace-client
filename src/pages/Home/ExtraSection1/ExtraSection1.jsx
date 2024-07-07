@@ -1,4 +1,5 @@
-import React from 'react';
+import { Link } from "react-router-dom";
+
 
 const ExtraSection1 = () => {
     return (
@@ -12,7 +13,7 @@ const ExtraSection1 = () => {
                 Visit our toy store for a limited-time discount! Enjoy up to 50% off <br />
                 on a wide range of toys, including popular brands and exciting new arrivals. Do not miss out on these incredible savings
             </p>
-            <button className="btn btn-accent">Visit Our Shop Now</button>
+            <Link to="allToys"><button className="btn btn-accent">Visit Our Shop Now</button></Link>
         </div>
     );
 };
